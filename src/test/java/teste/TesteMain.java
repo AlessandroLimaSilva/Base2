@@ -417,7 +417,7 @@ public class TesteMain {
 		driver.quit();
 	}
 	
-	// 29 || Erro ao digitar uma letra ou caracter especial no campo de busca
+	// 29 || Erro ao digitar uma letra ou caracter especial no campo de busca.
 	@Test
 	public void erroBuscaCaracterLetra() throws InterruptedException{
 		WebDriver driver = new DriverFactory().getConnectionChrome();
