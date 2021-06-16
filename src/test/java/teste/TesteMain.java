@@ -14,7 +14,7 @@ public class TesteMain {
 	@Test
 	public void loginSucesso() throws IOException{
 		
-		WebDriver driver = new DriverFactory().getConnectionFirefox();
+		WebDriver driver = new DriverFactory().getConnectionChrome();
 		WebDriverWait wait = new WebDriverWait(driver,10);
 		TestePageLogin login = new TestePageLogin(driver,wait);
 		
@@ -220,7 +220,7 @@ public class TesteMain {
 	// 15 || Teste  para acessar função minha conta
 	@Test
 	public void AcessarTelaMinhaConta() throws InterruptedException {
-		WebDriver driver = new DriverFactory().getConnectionFirefox();
+		WebDriver driver = new DriverFactory().getConnectionChrome();
 		WebDriverWait wait = new WebDriverWait(driver,10);
 		
 		TestePageLogin login = new TestePageLogin(driver,wait);
@@ -427,6 +427,19 @@ public class TesteMain {
 		TestePageMinhaVisao mv = new TestePageMinhaVisao(driver,wait);
 		login.loginSucesso();
 		mv.getErroBuscaCaracter();
+		driver.quit();
+
+	}
+	
+	@Test
+	public void efetuarBusca() throws InterruptedException{
+		WebDriver driver = new DriverFactory().getConnectionChrome();
+		WebDriverWait wait = new WebDriverWait(driver,10);
+		
+		TestePageLogin login = new TestePageLogin(driver,wait);
+		TestePageMinhaVisao mv = new TestePageMinhaVisao(driver,wait);
+		login.loginSucesso();
+		mv.getEfetuarBusca();
 		driver.quit();
 
 	}

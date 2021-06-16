@@ -3,12 +3,13 @@ package model;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebDriverException;
 
 public class PageMinhaVisao {
 
 	    //====================Endereços URL================================
 		public String minhaVisaoURL = "https://mantis.saojudas.base2.com.br/my_view_page.php";
-		//html/body/div[2]/div[2]/div[1]/div[2]/form/span/input
+		private String buscaLink = "https://mantis.saojudas.base2.com.br/view.php?id=4";
 		//====================Caminhos de variaveis========================
 		public By campoBuscaTarefa = By.xpath("/html/body/div[2]/div[2]/div[1]/div/form/span/input");
 		public By BotaoAtribuidoAMin = By.xpath("//*[@id=\'assigned\']/div[1]/div[2]/div");
@@ -28,13 +29,15 @@ public class PageMinhaVisao {
         public By botaoAnteriorLinhaTempo = By.xpath("/html/body/div[2]/div[2]/div[2]/div/div[2]/div[1]/div[2]/div[1]/div/div/a");
 		public By textoErrorMilCem = By.xpath("//*[@id=\"main-container\"]/div[2]/div[2]/div/div/div[2]/p[1]");
 		private By textoErroDuzentoTre = By.xpath("/html/body/div[2]/div[2]/div[2]/div/div/div[2]/p[1]");
-        public String urlAtribuidoAMin = "https://mantis.saojudas.base2.com.br/view_all_bug_page.php?filter=";
+        public By botaoAbaLinhaTempo = By.xpath("/html/body/div[2]/div[2]/div[2]/div/div[2]/div[1]/div[1]/div/a");
+		public String urlAtribuidoAMin = "https://mantis.saojudas.base2.com.br/view_all_bug_page.php?filter=";
 		public String urlLinhaTempo = "https://mantis.saojudas.base2.com.br/my_view_page.php?days=7";
 		public String mensagemVisualizandoTarefa = "Visualizando Tarefas";
 		public String mensagemFiltro = "Filtros";
 		private String caracter = "busca";
 		private String mensagemErroBuscaVazia = "APPLICATION ERROR #1100";
 		private String mensagemErroBuscaCaracter = "APPLICATION ERROR #203";
+		private String busca = "4";
 		public WebDriver driver;
 		
 		public PageMinhaVisao(WebDriver driver) {
@@ -122,9 +125,19 @@ public class PageMinhaVisao {
 			driver.findElement(campoBuscaTarefa).click();
 			return this;
 		}
+		
+		public PageMinhaVisao getBotaoAbaLinhaTempo() {
+			driver.findElement(botaoAbaLinhaTempo).click();
+			return this;
+		}
 
 		public PageMinhaVisao getEnviarComandoCampoTarefa() {
 			driver.findElement(campoBuscaTarefa).sendKeys(Keys.ENTER);
+			return this;
+		}
+		
+		public PageMinhaVisao getBotaoAbaLinhaTempoVisualizar() {
+			driver.findElement(botaoAbaLinhaTempo);
 			return this;
 		}
 
@@ -133,9 +146,14 @@ public class PageMinhaVisao {
 			String res = driver.findElement(campoBuscaTarefa).getText();
 			return res;
 		}
+		
+		public PageMinhaVisao getPreencherBusca() {
+			driver.findElement(campoBuscaTarefa).sendKeys(getBusca());
+			return this;
+		}
 
 		public PageMinhaVisao getPreencherCampoBuscaCaracter() {
-			driver.findElement(campoBuscaTarefa).sendKeys(getMensagemErroBuscaCaracter());
+			driver.findElement(campoBuscaTarefa).sendKeys(getTextoCaracter());
 			return this;
 		}
 
@@ -162,4 +180,20 @@ public class PageMinhaVisao {
 		public String getTextoCaracter() {
 			return caracter;
 		}
+		
+		public String getBusca() {
+			return busca;
+		}
+		
+		public String getBuscaLink() {
+			return buscaLink;
+		}
+		
+		public String verificaUrlAtual() throws WebDriverException{
+			
+			String resultado = driver.getCurrentUrl();
+			
+			return resultado;
+		}
+
 }

@@ -95,6 +95,8 @@ public class TestePageMinhaConta {
 		pgm.getBotaoAtualizarUsuario();
 		Assert.assertTrue(verificaUrlAtual().equals(pgm.getURLContaUpdate()));
 		wait.until(ExpectedConditions.visibilityOfElementLocated(pvs.BotaoAtribuidoAMin));
+		pgm.getBotaoMenuMinhaConta();
+		pgm.getBotaoMinhaConta();
 		
 	}
 	
@@ -129,18 +131,22 @@ public class TestePageMinhaConta {
 
 	public void getAdicionarPerfil() {
 		PageMinhaConta pgm = new PageMinhaConta(driver);
-		pgm.getBotaoMenuMinhaConta();
-		pgm.getBotaoMinhaConta();
+		pgm.getBotaoMenuMinhaConta().
+									getBotaoMinhaConta();
+		
 		Assert.assertTrue(verificaUrlAtual().equals(pgm.getURLMinhaConta()));
 		pgm.getBotaoPerfil();
 		wait.until(ExpectedConditions.visibilityOfElementLocated(pgm.getRetornoBotaoAdiconarPerfil()));
+		pgm.getSelecaoCaixaPerfil();
 		pgm.getPreencherPlataforma().
 									getPreencherSO().
 									getPreencherVersaoSO().
 									getPreencherDescricaoAdicional().
 									getBotaoAdicionarPerfil();
-		System.out.println(pgm.getValidarNomePerfil());
-		Assert.assertTrue(pgm.getValidarNomePerfil().contains(pgm.getTextoSelecaoCaixaPerfil()));	
+		Assert.assertTrue(pgm.getValidarNomePerfil().contains(pgm.getTextoSelecaoCaixaPerfil()));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(pgm.getRetornoBotaoAdiconarPerfil()));
+		pgm.getSelecaoCaixaPerfil();
+		pgm.getSelecaoCaixaPerfil();
 		
 	}
 
@@ -168,7 +174,7 @@ public class TestePageMinhaConta {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(pgm.getRetornoBotaoAdiconarPerfil()));
 		pgm.getBotaoEnviarPerfil();
 		Assert.assertTrue(pgm.getErroPerfilEnviarVazio().equals(pgm.getMensagemPerfilVazioErro()));
-		System.out.println(pgm.getErroPerfilEnviarVazio());
+		
 		
 	}
 

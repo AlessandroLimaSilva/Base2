@@ -51,6 +51,8 @@ public class PageMinhaConta {
 	private String perfilDescricaoAdicional = "Versao Teste Automatizado selenium webdriver";
 	private String validarNomePerfil = "AMD Ryzen 3900x, aourus x570, 32 Ubuntu 21.04 X64 Hirsut";
 	private String erroPagePerfilVazio = "APPLICATION ERROR #200";
+	private String userAle = "Alessandro Lima";
+	private String userHugo = "Hugo BASE2";
 	
 	public PageMinhaConta (WebDriver driver) {
 		this.driver = driver;
@@ -324,9 +326,14 @@ public class PageMinhaConta {
 		
 	}
 	
-	public PageMinhaConta getNomeUsuario() {
-		driver.findElement(caixaTextoNomeVerdadeiro).getText();
+	public PageMinhaConta getSelecionarCaixaNome() {
+		driver.findElement(caixaTextoNomeVerdadeiro).isSelected();
 		return this;
+		
+	}
+	
+	public CharSequence getNomeUsuario() {
+		return driver.findElement(caixaTextoNomeVerdadeiro).getText();
 	}
 
 	public String getErroPerfilEnviarVazio() {
@@ -382,6 +389,26 @@ public class PageMinhaConta {
 	
 	public String getMensagemPerfilVazioErro() {
 		return erroPagePerfilVazio;
+	}
+	
+	public String getUserAle() {
+		return userAle;
+	}
+	
+	public String getUserHugo() {
+		return userHugo;
+	}
+	
+	public PageMinhaConta getTextoAle() {
+		driver.findElement(caixaTextoNomeVerdadeiro).sendKeys(getUserAle());
+		return this;
+		
+	}
+	
+	public PageMinhaConta getTextoHugo() {
+		driver.findElement(caixaTextoNomeVerdadeiro).sendKeys(getUserHugo());
+		return this;
+		
 	}
 
 }

@@ -93,14 +93,15 @@ public class TestePageMinhaVisao {
 	public void getAcessarTelaLinhaTempo() {
 		
 		minhaVisao = new PageMinhaVisao(driver);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(minhaVisao.botaoAnteriorLinhaTempo));
+		//wait.until(ExpectedConditions.visibilityOfElementLocated(minhaVisao.botaoAbaLinhaTempo));
+		//minhaVisao.getBotaoAbaLinhaTempo();
 		minhaVisao.getBotaoAnteriorLinhaTempo();
 		Assert.assertTrue(verificaUrlAtual().equals(minhaVisao.urlLinhaTempo));
 	}
 	
 	public void getErroBuscaVazia() {
 		minhaVisao = new PageMinhaVisao(driver);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(minhaVisao.botaoAnteriorLinhaTempo));
+		//wait.until(ExpectedConditions.visibilityOfElementLocated(minhaVisao.botaoAnteriorLinhaTempo));
 		minhaVisao.getSelecionarCampoTarefa().
 											  getEnviarComandoCampoTarefa();
 		Assert.assertTrue(minhaVisao.getTextoErrorMilCem().equals(minhaVisao.getMensagemErroBuscaVazia()));
@@ -112,6 +113,14 @@ public class TestePageMinhaVisao {
 		minhaVisao.getPreencherCampoBuscaCaracter().
 											  getEnviarComandoCampoTarefa();
 		Assert.assertTrue(minhaVisao.getTextoErroDuzentoTre().equals(minhaVisao.getMensagemErroBuscaCaracter()));
+	}
+
+	public void getEfetuarBusca() {
+		minhaVisao = new PageMinhaVisao(driver);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(minhaVisao.botaoAnteriorLinhaTempo));
+		minhaVisao.getPreencherBusca().
+									 getEnviarComandoCampoTarefa();
+		Assert.assertTrue(minhaVisao.getBuscaLink().equals(minhaVisao.verificaUrlAtual()));
 	}
 
 	
