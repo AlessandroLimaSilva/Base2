@@ -63,7 +63,7 @@ public class TestePageLogin {
 	
 	}
 	
-	//Teste 04 validar se o sistema mostra a mensagem de erro aõ nao digitar uma senha
+	//Teste 04 validar se o sistema mostra a mensagem de erro ao nao digitar uma senha
 	@Test
 	public void loginSenhaEmBranco() throws WebDriverException{
 		

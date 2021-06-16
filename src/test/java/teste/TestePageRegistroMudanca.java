@@ -23,12 +23,13 @@ public class TestePageRegistroMudanca {
 		this.wait= wait;
 	}
 	
+	//Teste de caminho para acessar função registro mudança
 	public void getAcessarRegistroMudanca() throws IOException, InterruptedException{
 		
 		PageLogin login = new PageLogin(driver);
 		registroMudanca = new PageRegistroMudanca(driver);
-		login.getTelaLogin();
-		login.setCaixaTextoUsuario();
+		login.getTelaLogin().
+							setCaixaTextoUsuario();
 		Assert.assertTrue(verificaUrlAtual().equals(login.urlUser));
 		wait.until(ExpectedConditions.visibilityOfElementLocated(login.endBotaoLogin));
 		login.botaoLoginUser();

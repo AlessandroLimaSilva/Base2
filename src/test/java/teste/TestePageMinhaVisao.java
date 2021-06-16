@@ -24,6 +24,7 @@ public class TestePageMinhaVisao {
 		
 	}
 	
+	//Logica acesso a função Atribuido a min
 	public void getAcessarAtribuidoAMin() throws IOException, InterruptedException{
 		
 		minhaVisao = new PageMinhaVisao(driver);
@@ -35,6 +36,7 @@ public class TestePageMinhaVisao {
 		
 	}
 	
+	//Logica acesso a função Não atibuidos
 	public void getAcessarNaoAtribuido() throws IOException, InterruptedException{
 		
 		minhaVisao = new PageMinhaVisao(driver);
@@ -46,6 +48,7 @@ public class TestePageMinhaVisao {
 		
 	}
 	
+	//Logica acesso a função Relatados por mim
 	public void getAcessarRelatadoPorMin() throws IOException, InterruptedException{
 		
 		minhaVisao = new PageMinhaVisao(driver);
@@ -57,6 +60,7 @@ public class TestePageMinhaVisao {
 		
 	}
 	
+	//Logica acesso a função Resolvidos
 	public void getAcessarResolvido() throws IOException, InterruptedException{
 		
 		minhaVisao = new PageMinhaVisao(driver);
@@ -68,6 +72,7 @@ public class TestePageMinhaVisao {
 		
 	}
 	
+	//Logica acesso a função Modificados Recentemente
 	public void getAcessarModificadoRecentemente() throws IOException, InterruptedException{
 		
 		minhaVisao = new PageMinhaVisao(driver);
@@ -79,6 +84,7 @@ public class TestePageMinhaVisao {
 		
 	}
 	
+	//Logica acesso a função Monitarados por min
 	public void getAcessarMonitoradoPorMin() throws IOException, InterruptedException{
 		
 		minhaVisao = new PageMinhaVisao(driver);
@@ -90,6 +96,7 @@ public class TestePageMinhaVisao {
 		
 	}
 	
+	//Logica acesso a função linha do tempo
 	public void getAcessarTelaLinhaTempo() {
 		
 		minhaVisao = new PageMinhaVisao(driver);
@@ -99,6 +106,7 @@ public class TestePageMinhaVisao {
 		Assert.assertTrue(verificaUrlAtual().equals(minhaVisao.urlLinhaTempo));
 	}
 	
+	//Logica de erro ao enviar uma tecla para o campo de busca
 	public void getErroBuscaVazia() {
 		minhaVisao = new PageMinhaVisao(driver);
 		//wait.until(ExpectedConditions.visibilityOfElementLocated(minhaVisao.botaoAnteriorLinhaTempo));
@@ -107,6 +115,7 @@ public class TestePageMinhaVisao {
 		Assert.assertTrue(minhaVisao.getTextoErrorMilCem().equals(minhaVisao.getMensagemErroBuscaVazia()));
 	}
 
+	//Logica de erro ao enviar um caracter no campo de busca
 	public void getErroBuscaCaracter() {
 		minhaVisao = new PageMinhaVisao(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(minhaVisao.botaoAnteriorLinhaTempo));
@@ -114,7 +123,8 @@ public class TestePageMinhaVisao {
 											  getEnviarComandoCampoTarefa();
 		Assert.assertTrue(minhaVisao.getTextoErroDuzentoTre().equals(minhaVisao.getMensagemErroBuscaCaracter()));
 	}
-
+	
+	//Logica acesso a função de busca
 	public void getEfetuarBusca() {
 		minhaVisao = new PageMinhaVisao(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(minhaVisao.botaoAnteriorLinhaTempo));

@@ -19,116 +19,139 @@ public class TestePageMinhaConta {
 		this.wait = wait;
 	}
 	
+	//Logica Teste acessar Minha Conta
 	public void getAcessarMinhaConta() {
 		
 		PageMinhaConta pgm = new PageMinhaConta(driver);
-		pgm.getBotaoMenuMinhaConta();
-		pgm.getBotaoMinhaConta();
+		pgm.getBotaoMenuMinhaConta().
+									getBotaoMenuMinhaConta();
+	
 		Assert.assertTrue(verificaUrlAtual().equals(pgm.getURLMinhaConta()));
 		
 	}
 	
+	//Logica Teste Sair Minha Conta
 	public void getSairMinhaConta() {
 		
 		PageMinhaConta pgm = new PageMinhaConta(driver);
-		pgm.getBotaoMenuMinhaConta();
-		pgm.getSairMinhaConta();
+		pgm.getBotaoMenuMinhaConta().
+									getSairMinhaConta();
+		
 		Assert.assertTrue(verificaUrlAtual().equals(pgm.getURLLogin()));
 		
 	}
 	
+	//Logica Teste função feed rss
 	public void getConsumirRSS() {
 		
 		PageMinhaConta pgm = new PageMinhaConta(driver);
-		pgm.getBotaoMenuMinhaConta();
-		pgm.getConsumirFeedRSS();
+		pgm.getBotaoMenuMinhaConta().
+									getConsumirFeedRSS();
+		
 		Assert.assertTrue(verificaUrlAtual().contains(pgm.getURLRSS()));
 		
 	}
 	
+	//Logica Teste acessar função Acessar Preferencias
 	public void getAcessarPreferencias() {
 		
 		PageMinhaConta pgm = new PageMinhaConta(driver);
-		pgm.getBotaoMenuMinhaConta();
-		pgm.getBotaoMinhaConta();
+		pgm.getBotaoMenuMinhaConta().
+									getBotaoMinhaConta();
+		
 		Assert.assertTrue(verificaUrlAtual().equals(pgm.getURLMinhaConta()));
 		pgm.getBotaoPerfil();
 		Assert.assertTrue(verificaUrlAtual().equals(pgm.getURLPerfilPlataforma()));
 	}
 	
+	//Logica Teste acessar função Gerenciar Coluna
 	public void getAcessarGerenciarColuna() {
 		PageMinhaConta pgm = new PageMinhaConta(driver);
-		pgm.getBotaoMenuMinhaConta();
-		pgm.getBotaoMinhaConta();
+		pgm.getBotaoMenuMinhaConta().
+									getBotaoMinhaConta();
+	
 		Assert.assertTrue(verificaUrlAtual().equals(pgm.getURLMinhaConta()));
 		pgm.getBotaoGerenciarColuna();
 		Assert.assertTrue(verificaUrlAtual().equals(pgm.getURLGerenciarColuna()));
 	}
 	
+	//Logica Teste acessar função Token API 
 	public void getAcessarTokenAPI() {
 		PageMinhaConta pgm = new PageMinhaConta(driver);
-		pgm.getBotaoMenuMinhaConta();
-		pgm.getBotaoMinhaConta();
+		pgm.getBotaoMenuMinhaConta().
+									getBotaoMinhaConta();
+		
 		Assert.assertTrue(verificaUrlAtual().equals(pgm.getURLMinhaConta()));
 		pgm.getBotaoTokenAPI();
 		Assert.assertTrue(verificaUrlAtual().equals(pgm.getURLTokenAPI()));
 	}
 	
+	//Logica Teste acessar função Acessar Perfil
 	public void getAcessarPerfil() {
 		
 		PageMinhaConta pgm = new PageMinhaConta(driver);
-		pgm.getBotaoMenuMinhaConta();
-		pgm.getBotaoMinhaConta();
+		pgm.getBotaoMenuMinhaConta().
+									getBotaoMinhaConta();
+		
 		Assert.assertTrue(verificaUrlAtual().equals(pgm.getURLMinhaConta()));
 		pgm.getBotaoPerfil();
 		Assert.assertTrue(verificaUrlAtual().equals(pgm.getURLPerfilPlataforma()));
 	}
 	
+	//Logica Teste função Trocar Nome Verdadeiro
 	public void getTrocarNomeVerdadeiro() {
 		PageMinhaConta pgm = new PageMinhaConta(driver);
 		PageMinhaVisao pvs = new PageMinhaVisao(driver);
-		pgm.getBotaoMenuMinhaConta();
-		pgm.getBotaoMinhaConta();
-		pgm.getCaixaTextoNomeVerdadeiroVazia();
+		pgm.getBotaoMenuMinhaConta().
+									getBotaoMinhaConta().
+									getCaixaTextoNomeVerdadeiroVazia();
+		
 		Assert.assertTrue(verificaUrlAtual().equals(pgm.getURLMinhaConta()));
-		pgm.getCaixaTextoNomeVerdadeiro();
-		pgm.getBotaoAtualizarUsuario();
+		pgm.getCaixaTextoNomeVerdadeiro().
+										getBotaoAtualizarUsuario();
+		
 		Assert.assertTrue(verificaUrlAtual().equals(pgm.getURLContaUpdate()));
 		wait.until(ExpectedConditions.visibilityOfElementLocated(pvs.BotaoAtribuidoAMin));
-		pgm.getBotaoMenuMinhaConta();
-		pgm.getBotaoMinhaConta();
+		pgm.getBotaoMenuMinhaConta().
+									getBotaoMinhaConta();
+		
 		
 	}
 	
+	//Logica Teste função Trocar Email
 	public void getTrocarEmail() {
 		PageMinhaConta pgm = new PageMinhaConta(driver);
 		PageMinhaVisao pvs = new PageMinhaVisao(driver);
-		pgm.getBotaoMenuMinhaConta();
-		pgm.getBotaoMinhaConta();
+		pgm.getBotaoMenuMinhaConta().getBotaoMinhaConta();
+		
 		Assert.assertTrue(verificaUrlAtual().equals(pgm.getURLMinhaConta()));
-		pgm.getCaixaEmailVazia();
-		pgm.getCaixaTextoEmail();
-		pgm.getBotaoAtualizarUsuario();
+		pgm.getCaixaEmailVazia().
+								getCaixaTextoEmail().
+								getBotaoAtualizarUsuario();
+		
 		Assert.assertTrue(verificaUrlAtual().equals(pgm.getURLContaUpdate()));
 		wait.until(ExpectedConditions.visibilityOfElementLocated(pvs.BotaoAtribuidoAMin));
 		
 	}
 
+	//Logica Teste função Trocar Email
 	public void getTrocarSenha() {
 		PageMinhaConta pgm = new PageMinhaConta(driver);
 		PageMinhaVisao pvs = new PageMinhaVisao(driver);
-		pgm.getBotaoMenuMinhaConta();
-		pgm.getBotaoMinhaConta();
+		pgm.getBotaoMenuMinhaConta().
+									getBotaoMinhaConta();
+		
 		Assert.assertTrue(verificaUrlAtual().equals(pgm.getURLMinhaConta()));
-		pgm.getCaixaTextoSenhaAtual();
-		pgm.getCaixaTextoNovaSenha();
-		pgm.getCaixaTextoConfirmarSenha();
-		pgm.getBotaoAtualizarUsuario();
+		pgm.getCaixaTextoSenhaAtual().
+									getCaixaTextoNovaSenha().
+									getCaixaTextoConfirmarSenha().
+									getBotaoAtualizarUsuario();
 		
 		wait.until(ExpectedConditions.visibilityOfElementLocated(pvs.BotaoAtribuidoAMin));
 		
 	}
 
+	//Logica Teste função Adicionar Perfil
 	public void getAdicionarPerfil() {
 		PageMinhaConta pgm = new PageMinhaConta(driver);
 		pgm.getBotaoMenuMinhaConta().
@@ -145,15 +168,18 @@ public class TestePageMinhaConta {
 									getBotaoAdicionarPerfil();
 		Assert.assertTrue(pgm.getValidarNomePerfil().contains(pgm.getTextoSelecaoCaixaPerfil()));
 		wait.until(ExpectedConditions.visibilityOfElementLocated(pgm.getRetornoBotaoAdiconarPerfil()));
-		pgm.getSelecaoCaixaPerfil();
-		pgm.getSelecaoCaixaPerfil();
+		pgm.getSelecaoCaixaPerfil().
+									getSelecaoCaixaPerfil();
+
 		
 	}
 
+	//Logica Teste função Selecionar Perfil
 	public void getSelecionarPerfil() {
 		PageMinhaConta pgm = new PageMinhaConta(driver);
-		pgm.getBotaoMenuMinhaConta();
-		pgm.getBotaoMinhaConta();
+		pgm.getBotaoMenuMinhaConta().
+									getBotaoMinhaConta();
+		
 		Assert.assertTrue(verificaUrlAtual().equals(pgm.getURLMinhaConta()));
 		pgm.getBotaoPerfil();
 		wait.until(ExpectedConditions.visibilityOfElementLocated(pgm.getRetornoBotaoAdiconarPerfil()));
@@ -164,11 +190,12 @@ public class TestePageMinhaConta {
 		
 	}
 
-	
+	//Logica Teste função ao Não Selecionar Perfil
 	public void getNaoSelecionarPerfil() {
 		PageMinhaConta pgm = new PageMinhaConta(driver);
-		pgm.getBotaoMenuMinhaConta();
-		pgm.getBotaoMinhaConta();
+		pgm.getBotaoMenuMinhaConta().
+									getBotaoMinhaConta();
+	
 		Assert.assertTrue(verificaUrlAtual().equals(pgm.getURLMinhaConta()));
 		pgm.getBotaoPerfil();
 		wait.until(ExpectedConditions.visibilityOfElementLocated(pgm.getRetornoBotaoAdiconarPerfil()));

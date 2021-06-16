@@ -12,30 +12,23 @@ public class TesteMain {
 	
 	// 01 ||Teste de login efetuado com sucesso
 	@Test
-	public void loginSucesso() throws IOException{
+	public void loginSucesso() throws IOException, InterruptedException{
 		
 		WebDriver driver = new DriverFactory().getConnectionChrome();
 		WebDriverWait wait = new WebDriverWait(driver,10);
 		TestePageLogin login = new TestePageLogin(driver,wait);
-		
-		try {
 			
-			login.loginSucesso();
-			driver.quit();
+		login.loginSucesso();
+		driver.quit();
 			
-		} catch (InterruptedException e) {
-			
-			e.printStackTrace();
-			
-		}
 		
 	}
 	
 	// 02 ||Teste login com senha invalida
 	@Test
-	public void loginSenhaInvalida() throws IOException{
+	public void loginSenhaInvalida() throws IOException, InterruptedException{
 		
-		WebDriver driver = new DriverFactory().getConnectionFirefox();
+		WebDriver driver = new DriverFactory().getConnectionChrome();
 		WebDriverWait wait = new WebDriverWait(driver,10);
 		TestePageLogin login = new TestePageLogin(driver,wait);
 		
@@ -45,9 +38,9 @@ public class TesteMain {
 	
 	// 03 ||Teste de login com a senha não preenchida
 	@Test
-	public void loginSenhaEmBranco() throws IOException{
+	public void loginSenhaEmBranco() throws IOException, InterruptedException{
 		
-		WebDriver driver = new DriverFactory().getConnectionFirefox();
+		WebDriver driver = new DriverFactory().getConnectionChrome();
 		WebDriverWait wait = new WebDriverWait(driver,10);
 		TestePageLogin login = new TestePageLogin(driver,wait);
 		
@@ -58,9 +51,9 @@ public class TesteMain {
 	
 	// 04 ||Teste de tentativa de entrar na pagina minha visao sem logar no sistema
 	@Test
-	public void loginAcessarMyViewSemLogar() throws IOException{
+	public void loginAcessarMyViewSemLogar() throws IOException, InterruptedException{
 		
-		WebDriver driver = new DriverFactory().getConnectionFirefox();
+		WebDriver driver = new DriverFactory().getConnectionChrome();
 		WebDriverWait wait = new WebDriverWait(driver,10);
 		TestePageLogin login = new TestePageLogin(driver,wait);
 		
@@ -69,11 +62,11 @@ public class TesteMain {
 		
 	}
 
-	// 05 ||Teste para acessar a tela planejamento estando logado no sistema
+	// 05 ||Teste para acessar a função planejamento estando logado no sistema
 	@Test
 	public void AcessarPlanejamento() throws IOException, InterruptedException{
 		
-		WebDriver driver = new DriverFactory().getConnectionFirefox();
+		WebDriver driver = new DriverFactory().getConnectionChrome();
 		WebDriverWait wait = new WebDriverWait(driver,10);
 		
 		TestePagePlanejamento planejamento = new TestePagePlanejamento(driver,wait);
@@ -99,7 +92,7 @@ public class TesteMain {
 	@Test
 	public void AcessarRegistroMudanca() throws IOException, InterruptedException {
 		
-		WebDriver driver = new DriverFactory().getConnectionFirefox();
+		WebDriver driver = new DriverFactory().getConnectionChrome());
 		WebDriverWait wait = new WebDriverWait(driver,10);
 		
 		TestePageRegistroMudanca registroMudanca = new TestePageRegistroMudanca(driver,wait);
@@ -205,8 +198,8 @@ public class TesteMain {
 	
 	// 14 || Teste para acessar a função linha do tempo
 	@Test
-	public void AcessarTelaLinhaTempo() throws InterruptedException {
-		WebDriver driver = new DriverFactory().getConnectionFirefox();
+	public void AcessarTelaLinhaTempo() throws IOException, InterruptedException {
+		WebDriver driver = new DriverFactory().getConnectionChrome());
 		WebDriverWait wait = new WebDriverWait(driver,10);
 		TestePageLogin login = new TestePageLogin(driver,wait);
 		TestePageMinhaVisao minhaVisao = new TestePageMinhaVisao(driver,wait);
@@ -219,7 +212,7 @@ public class TesteMain {
 	
 	// 15 || Teste  para acessar função minha conta
 	@Test
-	public void AcessarTelaMinhaConta() throws InterruptedException {
+	public void AcessarTelaMinhaConta() throws IOException, InterruptedException {
 		WebDriver driver = new DriverFactory().getConnectionChrome();
 		WebDriverWait wait = new WebDriverWait(driver,10);
 		
@@ -234,8 +227,8 @@ public class TesteMain {
 	
 	// 16 || Teste para acessar a função deslogar do sistema
 	@Test
-	public void deslogarMinhaConta() throws InterruptedException{
-		WebDriver driver = new DriverFactory().getConnectionFirefox();
+	public void deslogarMinhaConta() throws IOException, InterruptedException{
+		WebDriver driver = new DriverFactory().getConnectionChrome();
 		WebDriverWait wait = new WebDriverWait(driver,10);
 		
 		TestePageLogin login = new TestePageLogin(driver,wait);
@@ -247,9 +240,9 @@ public class TesteMain {
 
 	}
 	
-	// 17 || Teste para acessar a função feed
+	// 17 || Teste para acessar a função feedRSS
 	@Test
-	public void consumirFeedRSS() throws InterruptedException {
+	public void consumirFeedRSS() throws IOException, InterruptedException {
 		WebDriver driver = new DriverFactory().getConnectionChrome();
 		WebDriverWait wait = new WebDriverWait(driver,10);
 		
@@ -263,7 +256,7 @@ public class TesteMain {
 	
 	// 18 || Teste para acessar a função preferencial
 	@Test
-	public void AcessarTelaPreferencia() throws InterruptedException {
+	public void AcessarTelaPreferencia() throws IOException, InterruptedException {
 		WebDriver driver = new DriverFactory().getConnectionChrome();
 		WebDriverWait wait = new WebDriverWait(driver,10);
 		
@@ -277,7 +270,7 @@ public class TesteMain {
 	
 	// 19 || Teste para acessar a função gerenciar coluna
 	@Test
-	public void AcessarTelaGerenciarColuna() throws InterruptedException {
+	public void AcessarTelaGerenciarColuna() throws IOException, InterruptedException {
 		WebDriver driver = new DriverFactory().getConnectionChrome();
 		WebDriverWait wait = new WebDriverWait(driver,10);
 		
@@ -291,7 +284,7 @@ public class TesteMain {
 	
 	// 20 || Teste para acessar a função perfil
 	@Test
-	public void AcessarTelaPerfil() throws InterruptedException {
+	public void AcessarTelaPerfil() throws IOException, InterruptedException {
 		WebDriver driver = new DriverFactory().getConnectionChrome();
 		WebDriverWait wait = new WebDriverWait(driver,10);
 		
@@ -305,7 +298,7 @@ public class TesteMain {
 	
 	// 21 || Teste para acessar a função token api
 	@Test
-	public void AcessarTelaTokenAPI() throws InterruptedException {
+	public void AcessarTelaTokenAPI() throws IOException, InterruptedException {
 		WebDriver driver = new DriverFactory().getConnectionChrome();
 		WebDriverWait wait = new WebDriverWait(driver,10);
 		
@@ -319,7 +312,7 @@ public class TesteMain {
 
 	// 22 || Teste para acessar a funcão trocar nome de usuario
 	@Test
-	public void trocarNomeUsuario() throws InterruptedException {
+	public void trocarNomeUsuario() throws IOException, InterruptedException {
 		WebDriver driver = new DriverFactory().getConnectionChrome();
 		WebDriverWait wait = new WebDriverWait(driver,10);
 		
@@ -334,7 +327,7 @@ public class TesteMain {
 
 	// 23 || Teste para acessar a função trocar email 
 	@Test
-	public void trocarEmailUsuario() throws InterruptedException {
+	public void trocarEmailUsuario() throws IOException, InterruptedException {
 		WebDriver driver = new DriverFactory().getConnectionChrome();
 		WebDriverWait wait = new WebDriverWait(driver,10);
 		
@@ -349,7 +342,7 @@ public class TesteMain {
 
 	// 24 || Teste para acessar a função trocar senha 
 	@Test
-	public void trocarSenhaUsuario() throws InterruptedException {
+	public void trocarSenhaUsuario() throws IOException, InterruptedException {
 		WebDriver driver = new DriverFactory().getConnectionChrome();
 		WebDriverWait wait = new WebDriverWait(driver,10);
 		
@@ -364,7 +357,7 @@ public class TesteMain {
 
 	// 25 || Teste para acessar a função adicionar perfil de usuario
 	@Test
-	public void adicionarPerfilUsuario() throws InterruptedException {
+	public void adicionarPerfilUsuario() throws IOException, InterruptedException {
 		WebDriver driver = new DriverFactory().getConnectionChrome();
 		WebDriverWait wait = new WebDriverWait(driver,10);
 		
@@ -378,7 +371,7 @@ public class TesteMain {
 	
 	// 26 || Teste para a função selecionar perfil de usuario
 	@Test
-	public void selecionarPerfilUsuario() throws InterruptedException {
+	public void selecionarPerfilUsuario() throws IOException, InterruptedException {
 		WebDriver driver = new DriverFactory().getConnectionChrome();
 		WebDriverWait wait = new WebDriverWait(driver,10);
 		
@@ -392,7 +385,7 @@ public class TesteMain {
 
 	// 27 ||Erro ao nao selecionar um perfil e apertar o botao enviar
 	@Test
-	public void naoSelecionarPerfilUsuario() throws InterruptedException {
+	public void naoSelecionarPerfilUsuario() throws IOException, InterruptedException {
 		WebDriver driver = new DriverFactory().getConnectionChrome();
 		WebDriverWait wait = new WebDriverWait(driver,10);
 		
@@ -406,7 +399,7 @@ public class TesteMain {
 	
 	// 28 ||Erro ao digitar enter no campo de busca vazio
 	@Test
-	public void erroBuscaVaziaCampoTarefa() throws InterruptedException {
+	public void erroBuscaVaziaCampoTarefa() throws IOException, InterruptedException {
 		WebDriver driver = new DriverFactory().getConnectionChrome();
 		WebDriverWait wait = new WebDriverWait(driver,10);
 		
@@ -419,7 +412,7 @@ public class TesteMain {
 	
 	// 29 || Erro ao digitar uma letra ou caracter especial no campo de busca.
 	@Test
-	public void erroBuscaCaracterLetra() throws InterruptedException{
+	public void erroBuscaCaracterLetra() throws IOException, InterruptedException{
 		WebDriver driver = new DriverFactory().getConnectionChrome();
 		WebDriverWait wait = new WebDriverWait(driver,10);
 		
@@ -431,8 +424,9 @@ public class TesteMain {
 
 	}
 	
+	//30 || 
 	@Test
-	public void efetuarBusca() throws InterruptedException{
+	public void efetuarBusca() throws IOException, InterruptedException{
 		WebDriver driver = new DriverFactory().getConnectionChrome();
 		WebDriverWait wait = new WebDriverWait(driver,10);
 		

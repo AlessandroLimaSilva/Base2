@@ -23,12 +23,14 @@ public class TestePagePlanejamento {
 		this.wait= wait;
 	}
 	
+	//Teste de caminho para função acessar planejamento
 	public void getAcessarPlanejamento() throws IOException, InterruptedException{
 		
 		PageLogin login = new PageLogin(driver);
 		planejamento = new PagePlanejamento(driver);
-		login.getTelaLogin();
-		login.setCaixaTextoUsuario();
+		login.getTelaLogin().
+							setCaixaTextoUsuario();
+		
 		Assert.assertTrue(verificaUrlAtual().equals(login.urlUser));
 		wait.until(ExpectedConditions.visibilityOfElementLocated(login.endBotaoLogin));
 		login.botaoLoginUser();
