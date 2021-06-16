@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 
 public class PageRegistroMudanca {
 
-	public String urlRegistroMudanca = "https://mantis.saojudas.base2.com.br/changelog_page.php";
+	private String urlRegistroMudanca = "https://mantis.saojudas.base2.com.br/changelog_page.php";
 	public By botaoRegistroMudanca = By.xpath("/html/body/div[2]/div[1]/ul/li[4]/a/span");
 	public WebDriver driver;
 	
@@ -14,7 +14,7 @@ public class PageRegistroMudanca {
 	}
 	
 	public PageRegistroMudanca getURLRegistroMudanca() {
-		driver.get(urlRegistroMudanca);
+		driver.get(getUrlRegistroMudanca());
 		return this;
 	}
 	
@@ -26,6 +26,10 @@ public class PageRegistroMudanca {
 	public PageRegistroMudanca confirmaUrlAtual() {
 		driver.getCurrentUrl();
 		return this;
+	}
+
+	public String getUrlRegistroMudanca() {
+		return urlRegistroMudanca;
 	}
 
 }

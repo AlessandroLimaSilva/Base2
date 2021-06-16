@@ -113,7 +113,7 @@ public class TestePageMinhaConta {
 										getBotaoAtualizarUsuario();
 		
 		Assert.assertTrue(verificaUrlAtual().equals(pgm.getURLContaUpdate()));
-		wait.until(ExpectedConditions.visibilityOfElementLocated(pvs.BotaoAtribuidoAMin));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(pvs.botaoAtribuidoAMin));
 		pgm.getBotaoMenuMinhaConta().
 									getBotaoMinhaConta();
 		
@@ -132,7 +132,7 @@ public class TestePageMinhaConta {
 								getBotaoAtualizarUsuario();
 		
 		Assert.assertTrue(verificaUrlAtual().equals(pgm.getURLContaUpdate()));
-		wait.until(ExpectedConditions.visibilityOfElementLocated(pvs.BotaoAtribuidoAMin));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(pvs.botaoAtribuidoAMin));
 		
 	}
 
@@ -149,7 +149,7 @@ public class TestePageMinhaConta {
 									getCaixaTextoConfirmarSenha().
 									getBotaoAtualizarUsuario();
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(pvs.BotaoAtribuidoAMin));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(pvs.botaoAtribuidoAMin));
 		
 	}
 

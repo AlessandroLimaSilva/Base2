@@ -41,7 +41,7 @@ public class TestePagePlanejamento {
 		login.botaoLoginPass();
 		
 		planejamento.getBotaoPlanejamento();
-		Assert.assertTrue(planejamento.urlPlanejamento.equals(verificaUrlAtual()));
+		Assert.assertTrue(planejamento.getUrlPlanejamento().equals(verificaUrlAtual()));
 		
 	}
 	

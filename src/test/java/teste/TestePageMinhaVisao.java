@@ -28,11 +28,11 @@ public class TestePageMinhaVisao {
 	public void getAcessarAtribuidoAMin() throws IOException,WebDriverException,InterruptedException{
 		
 		minhaVisao = new PageMinhaVisao(driver);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(minhaVisao.BotaoAtribuidoAMin));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(minhaVisao.botaoAtribuidoAMin));
 		minhaVisao.getBotaoAtribuidoAMinVerTarefa();
 		driver.getPageSource().contentEquals(minhaVisao.mensagemFiltro);
 		driver.getPageSource().contentEquals(minhaVisao.mensagemVisualizandoTarefa);
-		driver.getPageSource().contentEquals(minhaVisao.minhaVisaoURL);
+		driver.getPageSource().contentEquals(minhaVisao.getMinhaVisaoURL());
 		
 	}
 	
@@ -40,11 +40,11 @@ public class TestePageMinhaVisao {
 	public void getAcessarNaoAtribuido() throws IOException,WebDriverException,InterruptedException{
 		
 		minhaVisao = new PageMinhaVisao(driver);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(minhaVisao.BotaoNaoAtribuidoVerTarefa));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(minhaVisao.botaoNaoAtribuidoVerTarefa));
 		minhaVisao.getBotaoNaoAtribuidoVerTarefa();
 		driver.getPageSource().contentEquals(minhaVisao.mensagemFiltro);
 		driver.getPageSource().contentEquals(minhaVisao.mensagemVisualizandoTarefa);
-		driver.getPageSource().contentEquals(minhaVisao.minhaVisaoURL);
+		driver.getPageSource().contentEquals(minhaVisao.getMinhaVisaoURL());
 		
 	}
 	
@@ -52,11 +52,11 @@ public class TestePageMinhaVisao {
 	public void getAcessarRelatadoPorMin() throws IOException,WebDriverException,InterruptedException{
 		
 		minhaVisao = new PageMinhaVisao(driver);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(minhaVisao.BotaoRelatadoPorMinVerTarefa));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(minhaVisao.botaoRelatadoPorMinVerTarefa));
 		minhaVisao.getBotaoRelatadoPorMinVerTarefa();
 		driver.getPageSource().contentEquals(minhaVisao.mensagemFiltro);
 		driver.getPageSource().contentEquals(minhaVisao.mensagemVisualizandoTarefa);
-		driver.getPageSource().contentEquals(minhaVisao.minhaVisaoURL);
+		driver.getPageSource().contentEquals(minhaVisao.getMinhaVisaoURL());
 		
 	}
 	
@@ -64,11 +64,11 @@ public class TestePageMinhaVisao {
 	public void getAcessarResolvido() throws IOException,WebDriverException,InterruptedException{
 		
 		minhaVisao = new PageMinhaVisao(driver);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(minhaVisao.BotaoResolvidoVerTarefa));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(minhaVisao.botaoResolvidoVerTarefa));
 		minhaVisao.getBotaoResolvidoVerTarefa();
 		driver.getPageSource().contentEquals(minhaVisao.mensagemFiltro);
 		driver.getPageSource().contentEquals(minhaVisao.mensagemVisualizandoTarefa);
-		driver.getPageSource().contentEquals(minhaVisao.minhaVisaoURL);
+		driver.getPageSource().contentEquals(minhaVisao.getMinhaVisaoURL());
 		
 	}
 	
@@ -76,11 +76,11 @@ public class TestePageMinhaVisao {
 	public void getAcessarModificadoRecentemente() throws IOException,WebDriverException,InterruptedException{
 		
 		minhaVisao = new PageMinhaVisao(driver);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(minhaVisao.BotaoModificadoRecentementeVerTarefa));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(minhaVisao.botaoModificadoRecentementeVerTarefa));
 		minhaVisao.getBotaoModificadoRecentementeVerTarefa();
 		driver.getPageSource().contentEquals(minhaVisao.mensagemFiltro);
 		driver.getPageSource().contentEquals(minhaVisao.mensagemVisualizandoTarefa);
-		driver.getPageSource().contentEquals(minhaVisao.minhaVisaoURL);
+		driver.getPageSource().contentEquals(minhaVisao.getMinhaVisaoURL());
 		
 	}
 	
@@ -88,11 +88,11 @@ public class TestePageMinhaVisao {
 	public void getAcessarMonitoradoPorMin() throws IOException,WebDriverException,InterruptedException{
 		
 		minhaVisao = new PageMinhaVisao(driver);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(minhaVisao.BotaoMonitoradoPorMinVerTarefa));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(minhaVisao.botaoMonitoradoPorMinVerTarefa));
 		minhaVisao.getBotaoRelatadoPorMinVerTarefa();
 		driver.getPageSource().contentEquals(minhaVisao.mensagemFiltro);
 		driver.getPageSource().contentEquals(minhaVisao.mensagemVisualizandoTarefa);
-		driver.getPageSource().contentEquals(minhaVisao.minhaVisaoURL);
+		driver.getPageSource().contentEquals(minhaVisao.getMinhaVisaoURL());
 		
 	}
 	

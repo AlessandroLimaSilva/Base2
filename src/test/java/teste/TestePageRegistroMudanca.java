@@ -40,7 +40,7 @@ public class TestePageRegistroMudanca {
 		login.botaoLoginPass();
 		
 		registroMudanca.getBotaoReagistroMudanca();
-		Assert.assertTrue(verificaUrlAtual().equals(registroMudanca.urlRegistroMudanca));
+		Assert.assertTrue(verificaUrlAtual().equals(registroMudanca.getUrlRegistroMudanca()));
 		
 	}
 	
