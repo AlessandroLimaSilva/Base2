@@ -24,7 +24,7 @@ public class TestePageRegistroMudanca {
 	}
 	
 	//Teste de caminho para acessar função registro mudança
-	public void getAcessarRegistroMudanca() throws IOException, InterruptedException{
+	public void getAcessarRegistroMudanca() throws IOException,WebDriverException,InterruptedException{
 		
 		PageLogin login = new PageLogin(driver);
 		registroMudanca = new PageRegistroMudanca(driver);
@@ -44,7 +44,7 @@ public class TestePageRegistroMudanca {
 		
 	}
 	
-	public String verificaUrlAtual() throws WebDriverException{
+	public String verificaUrlAtual() throws IOException,WebDriverException,InterruptedException{
 		String resultado = driver.getCurrentUrl();
 		return resultado;
 	}

@@ -26,13 +26,13 @@ public class TestePageLogin {
 	}
 
 	
-	//Teste 01 Validar se o usuario com nome de usuario e senha consegue logar com sucesso
-	@Test
-	public void loginSucesso() throws InterruptedException {
+	////Logica Teste função se o usuario com nome de usuario e senha consegue logar com sucesso
+	public void loginSucesso() throws IOException,WebDriverException,InterruptedException {
 		
 		login = new PageLogin(driver);
-		login.getTelaLogin();
-		login.setCaixaTextoUsuario();
+		login.getTelaLogin().
+							setCaixaTextoUsuario();
+		
 		Assert.assertTrue(verificaUrlAtual().equals(login.urlUser));
 		wait.until(ExpectedConditions.visibilityOfElementLocated(login.endBotaoLogin));
 		login.botaoLoginUser();
@@ -45,46 +45,47 @@ public class TestePageLogin {
 	
 	}
 	
-	//Teste 03 validar se o sistema mostra valida uma senha invalida
-	@Test
-	public void loginSenhaInvalida() throws WebDriverException{
+	////Logica Teste sistema valida uma senha invalida
+	public void loginSenhaInvalida() throws IOException,WebDriverException,InterruptedException{
 		
 		login = new PageLogin(driver);
-		login.getTelaLogin();
-		login.setCaixaTextoUsuario();
+		login.getTelaLogin().
+							setCaixaTextoUsuario();
+		
 		Assert.assertTrue(verificaUrlAtual().equals(login.urlUser));
 		wait.until(ExpectedConditions.visibilityOfElementLocated(login.endBotaoLogin));
 		login.botaoLoginUser();
 		wait.until(ExpectedConditions.visibilityOfElementLocated(login.endCaixaPassword));
 		Assert.assertTrue(verificaUrlAtual().equals(login.urlPassword));
-		login.setCaixaTextoSenhaFake();
-		login.botaoLoginPass();
+		login.setCaixaTextoSenhaFake().
+									botaoLoginPass();
+		
 		Assert.assertFalse(verificaUrlAtual().equals(login.urlView));
 	
 	}
 	
-	//Teste 04 validar se o sistema mostra a mensagem de erro ao nao digitar uma senha
-	@Test
-	public void loginSenhaEmBranco() throws WebDriverException{
+	////Logica Teste sistema mostra a mensagem de erro ao nao digitar uma senha
+	public void loginSenhaEmBranco() throws IOException,WebDriverException,InterruptedException{
 		
 		login = new PageLogin(driver);
-		login.getTelaLogin();
-		login.setCaixaTextoUsuario();
+		login.getTelaLogin().
+							setCaixaTextoUsuario();
+		
 		Assert.assertTrue(verificaUrlAtual().equals(login.urlUser));
 		wait.until(ExpectedConditions.visibilityOfElementLocated(login.endBotaoLogin));
 		login.botaoLoginUser();
 		wait.until(ExpectedConditions.visibilityOfElementLocated(login.endCaixaPassword));
 		Assert.assertTrue(verificaUrlAtual().equals(login.urlPassword));
-		login.caixaPasswordBranco();
-		login.botaoLoginPass();
+		login.caixaPasswordBranco().
+									botaoLoginPass();
+		
 		wait.until(ExpectedConditions.visibilityOfElementLocated(login.endBotaoLoginErro));
 		
 	} 
 	
 	
-	//Teste 06 validar se é possivel acessar o sistema sem se logar
-	@Test
-	public void AcessarMyViewSemLogar() throws WebDriverException{
+	//Logica Teste  acessar o sistema sem se logar
+	public void AcessarMyViewSemLogar() throws IOException,WebDriverException,InterruptedException{
 		
 		login = new PageLogin(driver);
 		login.getTelaMinhaVisao();
@@ -93,11 +94,13 @@ public class TestePageLogin {
 		
 	}
 	
-	public void perdeuSenha() throws IOException, InterruptedException{
+	//Logica Teste função Perdeu Senha
+	public void perdeuSenha() throws IOException,WebDriverException,InterruptedException{
 		
 		login = new PageLogin(driver);//instancia o driver
-		login.getTelaLogin();//acessa a tela de login
-		login.setCaixaTextoUsuario();//preenche a caixa de texto usuario
+		login.getTelaLogin().			//acessa a tela de login
+							setCaixaTextoUsuario();//preenche a caixa de texto usuario
+		
 		Assert.assertTrue(verificaUrlAtual().equals(login.urlUser));//verifica se a tela esta certa
 		wait.until(ExpectedConditions.visibilityOfElementLocated(login.endBotaoLogin));//aguarda o botao de login ser carregado
 		login.botaoLoginUser();//clica no botao de login de usuario
@@ -105,9 +108,10 @@ public class TestePageLogin {
 		Assert.assertTrue(verificaUrlAtual().equals(login.urlPassword));//compara a url atual com a esperada
 		//login.setCaixaTextoSenha();//preenche a caixa de texto senha
 		login.getBotaoPerdeuSenha();//aciona o botao perdeu a senha
-		System.out.print(login.getURLPerdeuSenha());
+		//System.out.print(login.getURLPerdeuSenha());
 		Assert.assertTrue(verificaUrlAtual().equals(login.getURLPerdeuSenha()));//compara a url atual com a esperada
-		login.setCaixaEmail().setBotaoEnviarEmail();//preenche a caixa de texto email
+		login.setCaixaEmail().
+							setBotaoEnviarEmail();//preenche a caixa de texto email
 		
 		Assert.assertTrue(verificaUrlAtual().equals(login.urlEmailEnviado));//compara a url atual com a esperada
 		
@@ -116,7 +120,7 @@ public class TestePageLogin {
 	
 	
 	
-	public String verificaUrlAtual() throws WebDriverException{
+	public String verificaUrlAtual() throws IOException,WebDriverException,InterruptedException{
 		
 		String resultado = driver.getCurrentUrl();
 		

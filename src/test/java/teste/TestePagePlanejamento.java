@@ -24,7 +24,7 @@ public class TestePagePlanejamento {
 	}
 	
 	//Teste de caminho para função acessar planejamento
-	public void getAcessarPlanejamento() throws IOException, InterruptedException{
+	public void getAcessarPlanejamento() throws IOException,WebDriverException,InterruptedException{
 		
 		PageLogin login = new PageLogin(driver);
 		planejamento = new PagePlanejamento(driver);
@@ -45,7 +45,7 @@ public class TestePagePlanejamento {
 		
 	}
 	
-	public String verificaUrlAtual() throws WebDriverException{
+	public String verificaUrlAtual() throws IOException,WebDriverException,InterruptedException{
 		String resultado = driver.getCurrentUrl();
 		return resultado;
 	}

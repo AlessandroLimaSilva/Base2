@@ -92,7 +92,7 @@ public class TesteMain {
 	@Test
 	public void AcessarRegistroMudanca() throws IOException, InterruptedException {
 		
-		WebDriver driver = new DriverFactory().getConnectionChrome());
+		WebDriver driver = new DriverFactory().getConnectionChrome();
 		WebDriverWait wait = new WebDriverWait(driver,10);
 		
 		TestePageRegistroMudanca registroMudanca = new TestePageRegistroMudanca(driver,wait);
@@ -199,7 +199,7 @@ public class TesteMain {
 	// 14 || Teste para acessar a função linha do tempo
 	@Test
 	public void AcessarTelaLinhaTempo() throws IOException, InterruptedException {
-		WebDriver driver = new DriverFactory().getConnectionChrome());
+		WebDriver driver = new DriverFactory().getConnectionChrome();
 		WebDriverWait wait = new WebDriverWait(driver,10);
 		TestePageLogin login = new TestePageLogin(driver,wait);
 		TestePageMinhaVisao minhaVisao = new TestePageMinhaVisao(driver,wait);

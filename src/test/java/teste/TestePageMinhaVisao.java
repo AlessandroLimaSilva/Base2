@@ -25,7 +25,7 @@ public class TestePageMinhaVisao {
 	}
 	
 	//Logica acesso a função Atribuido a min
-	public void getAcessarAtribuidoAMin() throws IOException, InterruptedException{
+	public void getAcessarAtribuidoAMin() throws IOException,WebDriverException,InterruptedException{
 		
 		minhaVisao = new PageMinhaVisao(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(minhaVisao.BotaoAtribuidoAMin));
@@ -37,7 +37,7 @@ public class TestePageMinhaVisao {
 	}
 	
 	//Logica acesso a função Não atibuidos
-	public void getAcessarNaoAtribuido() throws IOException, InterruptedException{
+	public void getAcessarNaoAtribuido() throws IOException,WebDriverException,InterruptedException{
 		
 		minhaVisao = new PageMinhaVisao(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(minhaVisao.BotaoNaoAtribuidoVerTarefa));
@@ -49,7 +49,7 @@ public class TestePageMinhaVisao {
 	}
 	
 	//Logica acesso a função Relatados por mim
-	public void getAcessarRelatadoPorMin() throws IOException, InterruptedException{
+	public void getAcessarRelatadoPorMin() throws IOException,WebDriverException,InterruptedException{
 		
 		minhaVisao = new PageMinhaVisao(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(minhaVisao.BotaoRelatadoPorMinVerTarefa));
@@ -61,7 +61,7 @@ public class TestePageMinhaVisao {
 	}
 	
 	//Logica acesso a função Resolvidos
-	public void getAcessarResolvido() throws IOException, InterruptedException{
+	public void getAcessarResolvido() throws IOException,WebDriverException,InterruptedException{
 		
 		minhaVisao = new PageMinhaVisao(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(minhaVisao.BotaoResolvidoVerTarefa));
@@ -73,7 +73,7 @@ public class TestePageMinhaVisao {
 	}
 	
 	//Logica acesso a função Modificados Recentemente
-	public void getAcessarModificadoRecentemente() throws IOException, InterruptedException{
+	public void getAcessarModificadoRecentemente() throws IOException,WebDriverException,InterruptedException{
 		
 		minhaVisao = new PageMinhaVisao(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(minhaVisao.BotaoModificadoRecentementeVerTarefa));
@@ -85,7 +85,7 @@ public class TestePageMinhaVisao {
 	}
 	
 	//Logica acesso a função Monitarados por min
-	public void getAcessarMonitoradoPorMin() throws IOException, InterruptedException{
+	public void getAcessarMonitoradoPorMin() throws IOException,WebDriverException,InterruptedException{
 		
 		minhaVisao = new PageMinhaVisao(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(minhaVisao.BotaoMonitoradoPorMinVerTarefa));
@@ -97,7 +97,7 @@ public class TestePageMinhaVisao {
 	}
 	
 	//Logica acesso a função linha do tempo
-	public void getAcessarTelaLinhaTempo() {
+	public void getAcessarTelaLinhaTempo() throws IOException,WebDriverException,InterruptedException{
 		
 		minhaVisao = new PageMinhaVisao(driver);
 		//wait.until(ExpectedConditions.visibilityOfElementLocated(minhaVisao.botaoAbaLinhaTempo));
@@ -107,7 +107,7 @@ public class TestePageMinhaVisao {
 	}
 	
 	//Logica de erro ao enviar uma tecla para o campo de busca
-	public void getErroBuscaVazia() {
+	public void getErroBuscaVazia() throws IOException,WebDriverException,InterruptedException{
 		minhaVisao = new PageMinhaVisao(driver);
 		//wait.until(ExpectedConditions.visibilityOfElementLocated(minhaVisao.botaoAnteriorLinhaTempo));
 		minhaVisao.getSelecionarCampoTarefa().
@@ -116,7 +116,7 @@ public class TestePageMinhaVisao {
 	}
 
 	//Logica de erro ao enviar um caracter no campo de busca
-	public void getErroBuscaCaracter() {
+	public void getErroBuscaCaracter() throws IOException,WebDriverException,InterruptedException{
 		minhaVisao = new PageMinhaVisao(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(minhaVisao.botaoAnteriorLinhaTempo));
 		minhaVisao.getPreencherCampoBuscaCaracter().
@@ -125,7 +125,7 @@ public class TestePageMinhaVisao {
 	}
 	
 	//Logica acesso a função de busca
-	public void getEfetuarBusca() {
+	public void getEfetuarBusca() throws IOException,WebDriverException,InterruptedException{
 		minhaVisao = new PageMinhaVisao(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(minhaVisao.botaoAnteriorLinhaTempo));
 		minhaVisao.getPreencherBusca().
@@ -134,7 +134,7 @@ public class TestePageMinhaVisao {
 	}
 
 	
-	public String verificaUrlAtual() throws WebDriverException{
+	public String verificaUrlAtual() throws IOException,WebDriverException,InterruptedException{
 		String resultado = driver.getCurrentUrl();
 		return resultado;
 	}

@@ -1,5 +1,7 @@
 package teste;
 
+import java.io.IOException;
+
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
@@ -20,7 +22,7 @@ public class TestePageMinhaConta {
 	}
 	
 	//Logica Teste acessar Minha Conta
-	public void getAcessarMinhaConta() {
+	public void getAcessarMinhaConta() throws IOException,WebDriverException,InterruptedException{
 		
 		PageMinhaConta pgm = new PageMinhaConta(driver);
 		pgm.getBotaoMenuMinhaConta().
@@ -31,7 +33,7 @@ public class TestePageMinhaConta {
 	}
 	
 	//Logica Teste Sair Minha Conta
-	public void getSairMinhaConta() {
+	public void getSairMinhaConta() throws IOException,WebDriverException,InterruptedException{
 		
 		PageMinhaConta pgm = new PageMinhaConta(driver);
 		pgm.getBotaoMenuMinhaConta().
@@ -42,7 +44,7 @@ public class TestePageMinhaConta {
 	}
 	
 	//Logica Teste função feed rss
-	public void getConsumirRSS() {
+	public void getConsumirRSS() throws IOException,WebDriverException,InterruptedException{
 		
 		PageMinhaConta pgm = new PageMinhaConta(driver);
 		pgm.getBotaoMenuMinhaConta().
@@ -53,7 +55,7 @@ public class TestePageMinhaConta {
 	}
 	
 	//Logica Teste acessar função Acessar Preferencias
-	public void getAcessarPreferencias() {
+	public void getAcessarPreferencias() throws IOException,WebDriverException,InterruptedException{
 		
 		PageMinhaConta pgm = new PageMinhaConta(driver);
 		pgm.getBotaoMenuMinhaConta().
@@ -65,7 +67,7 @@ public class TestePageMinhaConta {
 	}
 	
 	//Logica Teste acessar função Gerenciar Coluna
-	public void getAcessarGerenciarColuna() {
+	public void getAcessarGerenciarColuna() throws IOException,WebDriverException,InterruptedException {
 		PageMinhaConta pgm = new PageMinhaConta(driver);
 		pgm.getBotaoMenuMinhaConta().
 									getBotaoMinhaConta();
@@ -76,7 +78,7 @@ public class TestePageMinhaConta {
 	}
 	
 	//Logica Teste acessar função Token API 
-	public void getAcessarTokenAPI() {
+	public void getAcessarTokenAPI() throws IOException,WebDriverException,InterruptedException {
 		PageMinhaConta pgm = new PageMinhaConta(driver);
 		pgm.getBotaoMenuMinhaConta().
 									getBotaoMinhaConta();
@@ -87,7 +89,7 @@ public class TestePageMinhaConta {
 	}
 	
 	//Logica Teste acessar função Acessar Perfil
-	public void getAcessarPerfil() {
+	public void getAcessarPerfil() throws IOException,WebDriverException,InterruptedException{
 		
 		PageMinhaConta pgm = new PageMinhaConta(driver);
 		pgm.getBotaoMenuMinhaConta().
@@ -99,7 +101,7 @@ public class TestePageMinhaConta {
 	}
 	
 	//Logica Teste função Trocar Nome Verdadeiro
-	public void getTrocarNomeVerdadeiro() {
+	public void getTrocarNomeVerdadeiro() throws IOException,WebDriverException,InterruptedException{
 		PageMinhaConta pgm = new PageMinhaConta(driver);
 		PageMinhaVisao pvs = new PageMinhaVisao(driver);
 		pgm.getBotaoMenuMinhaConta().
@@ -119,7 +121,7 @@ public class TestePageMinhaConta {
 	}
 	
 	//Logica Teste função Trocar Email
-	public void getTrocarEmail() {
+	public void getTrocarEmail() throws IOException,WebDriverException,InterruptedException{
 		PageMinhaConta pgm = new PageMinhaConta(driver);
 		PageMinhaVisao pvs = new PageMinhaVisao(driver);
 		pgm.getBotaoMenuMinhaConta().getBotaoMinhaConta();
@@ -135,7 +137,7 @@ public class TestePageMinhaConta {
 	}
 
 	//Logica Teste função Trocar Email
-	public void getTrocarSenha() {
+	public void getTrocarSenha() throws IOException,WebDriverException,InterruptedException{
 		PageMinhaConta pgm = new PageMinhaConta(driver);
 		PageMinhaVisao pvs = new PageMinhaVisao(driver);
 		pgm.getBotaoMenuMinhaConta().
@@ -152,7 +154,7 @@ public class TestePageMinhaConta {
 	}
 
 	//Logica Teste função Adicionar Perfil
-	public void getAdicionarPerfil() {
+	public void getAdicionarPerfil() throws IOException,WebDriverException,InterruptedException{
 		PageMinhaConta pgm = new PageMinhaConta(driver);
 		pgm.getBotaoMenuMinhaConta().
 									getBotaoMinhaConta();
@@ -175,7 +177,7 @@ public class TestePageMinhaConta {
 	}
 
 	//Logica Teste função Selecionar Perfil
-	public void getSelecionarPerfil() {
+	public void getSelecionarPerfil() throws IOException,WebDriverException,InterruptedException{
 		PageMinhaConta pgm = new PageMinhaConta(driver);
 		pgm.getBotaoMenuMinhaConta().
 									getBotaoMinhaConta();
@@ -191,7 +193,7 @@ public class TestePageMinhaConta {
 	}
 
 	//Logica Teste função ao Não Selecionar Perfil
-	public void getNaoSelecionarPerfil() {
+	public void getNaoSelecionarPerfil() throws IOException,WebDriverException,InterruptedException{
 		PageMinhaConta pgm = new PageMinhaConta(driver);
 		pgm.getBotaoMenuMinhaConta().
 									getBotaoMinhaConta();
@@ -206,7 +208,7 @@ public class TestePageMinhaConta {
 	}
 
 	
-	public String verificaUrlAtual() throws WebDriverException{
+	public String verificaUrlAtual() throws IOException,WebDriverException,InterruptedException{
 		String resultado = driver.getCurrentUrl();
 		return resultado;
 	}
