@@ -6,29 +6,29 @@ import org.openqa.selenium.WebDriver;
 
 public class PageCriarTarefa {
 
-	public WebDriver driver;
-	public By urlCriarTarefa = By.xpath("https://mantis.saojudas.base2.com.br/bug_report_page.php");
-	public By categoria = By.xpath("//*[@id=\'category_id\']");
-	public By frequencia = By.xpath("//*[@id=\'reproducibility\']");
-	public By gravidade = By.xpath("//*[@id=\'severity\']");
-	public By prioridade = By.xpath("//*[@id=\'priority\']");
-	public By selecionarPerfil = By.xpath("/html/body/div[2]/div[2]/div[2]/div/div/form/div/div[2]/div[1]/div/table/tbody/tr[5]/td/div[1]/a/i");
-	public By plataforma = By.xpath("//*[@id=\'platform\']");
-	public By so = By.xpath("//*[@id=\'os\']");
-	public By versaoSO = By.xpath("//*[@id=\'os_build\']");
-	public By atribuirA = By.xpath("//*[@id=\'handler_id\']");
-	public By resumo = By.xpath("//*[@id=\'summary\']");
-	public By descricao = By.xpath("//*[@id=\'description\']");
-	public By passoReproduzir = By.xpath("//*[@id=\'steps_to_reproduce\']");
-	public By informacaoAdicional = By.xpath("//*[@id=\'additional_info\']");
-	public By aplicarMarcadorCampo = By.xpath("//*[@id=\'tag_string\']");
-	public By aplicarMarcadorComboBox = By.xpath("//*[@id=\'tag_select\']");
-	public By enviarArquivo = By.xpath("/html/body/div[2]/div[2]/div[2]/div/div/form/div/div[2]/div[1]/div/table/tbody/tr[12]/td/div[2]");
-	public By visibilidadePublico = By.xpath("/html/body/div[2]/div[2]/div[2]/div/div/form/div/div[2]/div[1]/div/table/tbody/tr[13]/td/label[1]/span");
-	public By visibilidadePrivado = By.xpath("/html/body/div[2]/div[2]/div[2]/div/div/form/div/div[2]/div[1]/div/table/tbody/tr[13]/td/label[2]/span");
-	public By continuarRelatando = By.xpath("/html/body/div[2]/div[2]/div[2]/div/div/form/div/div[2]/div[1]/div/table/tbody/tr[14]/td/label/span");
-	public By criarNovaTarefa = By.xpath("/html/body/div[2]/div[2]/div[2]/div/div/form/div/div[2]/div[2]/input");
-	public By recentementeVisitado = By.xpath("");
+	private WebDriver driver;
+	private By urlCriarTarefa = By.xpath("https://mantis.saojudas.base2.com.br/bug_report_page.php");
+	private By categoria = By.xpath("//*[@id=\'category_id\']");
+	private By frequencia = By.xpath("//*[@id=\'reproducibility\']");
+	private By gravidade = By.xpath("//*[@id=\'severity\']");
+	private By prioridade = By.xpath("//*[@id=\'priority\']");
+	private By selecionarPerfil = By.xpath("/html/body/div[2]/div[2]/div[2]/div/div/form/div/div[2]/div[1]/div/table/tbody/tr[5]/td/div[1]/a/i");
+	private By plataforma = By.xpath("//*[@id=\'platform\']");
+	private By so = By.xpath("//*[@id=\'os\']");
+	private By versaoSO = By.xpath("//*[@id=\'os_build\']");
+	private By atribuirA = By.xpath("//*[@id=\'handler_id\']");
+	private By resumo = By.xpath("//*[@id=\'summary\']");
+	private By descricao = By.xpath("//*[@id=\'description\']");
+	private By passoReproduzir = By.xpath("//*[@id=\'steps_to_reproduce\']");
+	private By informacaoAdicional = By.xpath("//*[@id=\'additional_info\']");
+	private By aplicarMarcadorCampo = By.xpath("//*[@id=\'tag_string\']");
+	private By aplicarMarcadorComboBox = By.xpath("//*[@id=\'tag_select\']");
+	private By enviarArquivo = By.xpath("/html/body/div[2]/div[2]/div[2]/div/div/form/div/div[2]/div[1]/div/table/tbody/tr[12]/td/div[2]");
+	private By visibilidadePublico = By.xpath("/html/body/div[2]/div[2]/div[2]/div/div/form/div/div[2]/div[1]/div/table/tbody/tr[13]/td/label[1]/span");
+	private By visibilidadePrivado = By.xpath("/html/body/div[2]/div[2]/div[2]/div/div/form/div/div[2]/div[1]/div/table/tbody/tr[13]/td/label[2]/span");
+	private By continuarRelatando = By.xpath("/html/body/div[2]/div[2]/div[2]/div/div/form/div/div[2]/div[1]/div/table/tbody/tr[14]/td/label/span");
+	private By criarNovaTarefa = By.xpath("/html/body/div[2]/div[2]/div[2]/div/div/form/div/div[2]/div[2]/input");
+	private By recentementeVisitado = By.xpath("");
 	
 	
 
