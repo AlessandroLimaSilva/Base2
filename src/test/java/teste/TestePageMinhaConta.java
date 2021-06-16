@@ -26,7 +26,7 @@ public class TestePageMinhaConta {
 		
 		PageMinhaConta pgm = new PageMinhaConta(driver);
 		pgm.getBotaoMenuMinhaConta().
-									getBotaoMenuMinhaConta();
+									getBotaoMinhaConta();
 	
 		Assert.assertTrue(verificaUrlAtual().equals(pgm.getURLMinhaConta()));
 		
