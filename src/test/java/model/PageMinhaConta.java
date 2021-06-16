@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
 
 public class PageMinhaConta {
 	
-	public WebDriver driver;
+	private WebDriver driver;
 	private String urlMinhaConta = "https://mantis.saojudas.base2.com.br/account_page.php";
 	private String urlPreferencia  = "https://mantis.saojudas.base2.com.br/account_prefs_page.php";
 	private String urlGerenciarColuna  = "https://mantis.saojudas.base2.com.br/account_manage_columns_page.php";
@@ -254,35 +254,35 @@ public class PageMinhaConta {
 	
 	public PageMinhaConta getCaixaTextoSenhaAtual() {
 		PageLogin login = new PageLogin();
-		driver.findElement(caixaTextoSenhaAtual).sendKeys(login.senha);
+		driver.findElement(caixaTextoSenhaAtual).sendKeys(login.getSenha());
 		return this;
 		
 	}
 
 	public PageMinhaConta getCaixaTextoNovaSenha() {
 		PageLogin login = new PageLogin();
-		driver.findElement(caixaTextoNovaSenha).sendKeys(login.senha);
+		driver.findElement(caixaTextoNovaSenha).sendKeys(login.getSenha());
 		return this;
 		
 	}
 
 	public PageMinhaConta getCaixaTextoConfirmarSenha() {
 		PageLogin login = new PageLogin();
-		driver.findElement(caixaTextoConfirmarSenha).sendKeys(login.senha);
+		driver.findElement(caixaTextoConfirmarSenha).sendKeys(login.getSenha());
 		return this;
 		
 	}
 
 	public PageMinhaConta getCaixaTextoEmail() {
 		PageLogin login = new PageLogin();
-		driver.findElement(caixaTextoEmail).sendKeys(login.email);
+		driver.findElement(caixaTextoEmail).sendKeys(login.getEmail());
 		return this;
 		
 	}
 
 	public PageMinhaConta getCaixaTextoNomeVerdadeiro() {
 		PageLogin login = new PageLogin();
-		driver.findElement(caixaTextoNomeVerdadeiro).sendKeys(login.user);
+		driver.findElement(caixaTextoNomeVerdadeiro).sendKeys(login.getUser());
 		return this;
 		
 	}

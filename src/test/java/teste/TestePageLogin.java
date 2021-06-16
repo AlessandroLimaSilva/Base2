@@ -33,15 +33,15 @@ public class TestePageLogin {
 		login.getTelaLogin().
 							setCaixaTextoUsuario();
 		
-		Assert.assertTrue(verificaUrlAtual().equals(login.urlUser));
-		wait.until(ExpectedConditions.visibilityOfElementLocated(login.endBotaoLogin));
+		Assert.assertTrue(verificaUrlAtual().equals(login.getUrlUser()));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(login.getEndBotaoLogin()));
 		login.botaoLoginUser();
-		wait.until(ExpectedConditions.visibilityOfElementLocated(login.endCaixaPassword));
-		Assert.assertTrue(verificaUrlAtual().equals(login.urlPassword));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(login.getEndCaixaPassword()));
+		Assert.assertTrue(verificaUrlAtual().equals(login.getUrlPassword()));
 		login.setCaixaTextoSenha();
-		wait.until(ExpectedConditions.visibilityOfElementLocated(login.endBotaoPassword));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(login.getEndBotaoPassword()));
 		login.botaoLoginPass();
-		Assert.assertTrue(verificaUrlAtual().equals(login.urlView));
+		Assert.assertTrue(verificaUrlAtual().equals(login.getUrlView()));
 	
 	}
 	
@@ -52,15 +52,15 @@ public class TestePageLogin {
 		login.getTelaLogin().
 							setCaixaTextoUsuario();
 		
-		Assert.assertTrue(verificaUrlAtual().equals(login.urlUser));
-		wait.until(ExpectedConditions.visibilityOfElementLocated(login.endBotaoLogin));
+		Assert.assertTrue(verificaUrlAtual().equals(login.getUrlUser()));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(login.getEndBotaoLogin()));
 		login.botaoLoginUser();
-		wait.until(ExpectedConditions.visibilityOfElementLocated(login.endCaixaPassword));
-		Assert.assertTrue(verificaUrlAtual().equals(login.urlPassword));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(login.getEndCaixaPassword()));
+		Assert.assertTrue(verificaUrlAtual().equals(login.getUrlPassword()));
 		login.setCaixaTextoSenhaFake().
 									botaoLoginPass();
 		
-		Assert.assertFalse(verificaUrlAtual().equals(login.urlView));
+		Assert.assertFalse(verificaUrlAtual().equals(login.getUrlView()));
 	
 	}
 	
@@ -71,15 +71,15 @@ public class TestePageLogin {
 		login.getTelaLogin().
 							setCaixaTextoUsuario();
 		
-		Assert.assertTrue(verificaUrlAtual().equals(login.urlUser));
-		wait.until(ExpectedConditions.visibilityOfElementLocated(login.endBotaoLogin));
+		Assert.assertTrue(verificaUrlAtual().equals(login.getUrlUser()));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(login.getEndBotaoLogin()));
 		login.botaoLoginUser();
-		wait.until(ExpectedConditions.visibilityOfElementLocated(login.endCaixaPassword));
-		Assert.assertTrue(verificaUrlAtual().equals(login.urlPassword));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(login.getEndCaixaPassword()));
+		Assert.assertTrue(verificaUrlAtual().equals(login.getUrlPassword()));
 		login.caixaPasswordBranco().
 									botaoLoginPass();
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(login.endBotaoLoginErro));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(login.getEndBotaoLoginErro()));
 		
 	} 
 	
@@ -89,7 +89,7 @@ public class TestePageLogin {
 		
 		login = new PageLogin(driver);
 		login.getTelaMinhaVisao();
-		Assert.assertFalse(verificaUrlAtual().equals(login.urlView));
+		Assert.assertFalse(verificaUrlAtual().equals(login.getUrlView()));
 		
 		
 	}
@@ -101,11 +101,11 @@ public class TestePageLogin {
 		login.getTelaLogin().			//acessa a tela de login
 							setCaixaTextoUsuario();//preenche a caixa de texto usuario
 		
-		Assert.assertTrue(verificaUrlAtual().equals(login.urlUser));//verifica se a tela esta certa
-		wait.until(ExpectedConditions.visibilityOfElementLocated(login.endBotaoLogin));//aguarda o botao de login ser carregado
+		Assert.assertTrue(verificaUrlAtual().equals(login.getUrlUser()));//verifica se a tela esta certa
+		wait.until(ExpectedConditions.visibilityOfElementLocated(login.getEndBotaoLogin()));//aguarda o botao de login ser carregado
 		login.botaoLoginUser();//clica no botao de login de usuario
-		wait.until(ExpectedConditions.visibilityOfElementLocated(login.endCaixaPassword));//aguarda carregar a caixa de texto password
-		Assert.assertTrue(verificaUrlAtual().equals(login.urlPassword));//compara a url atual com a esperada
+		wait.until(ExpectedConditions.visibilityOfElementLocated(login.getEndCaixaPassword()));//aguarda carregar a caixa de texto password
+		Assert.assertTrue(verificaUrlAtual().equals(login.getUrlPassword()));//compara a url atual com a esperada
 		//login.setCaixaTextoSenha();//preenche a caixa de texto senha
 		login.getBotaoPerdeuSenha();//aciona o botao perdeu a senha
 		//System.out.print(login.getURLPerdeuSenha());
@@ -113,7 +113,7 @@ public class TestePageLogin {
 		login.setCaixaEmail().
 							setBotaoEnviarEmail();//preenche a caixa de texto email
 		
-		Assert.assertTrue(verificaUrlAtual().equals(login.urlEmailEnviado));//compara a url atual com a esperada
+		Assert.assertTrue(verificaUrlAtual().equals(login.getUrlEmailEnviado()));//compara a url atual com a esperada
 		
 	}
 	

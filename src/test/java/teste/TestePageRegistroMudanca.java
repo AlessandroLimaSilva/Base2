@@ -30,13 +30,13 @@ public class TestePageRegistroMudanca {
 		registroMudanca = new PageRegistroMudanca(driver);
 		login.getTelaLogin().
 							setCaixaTextoUsuario();
-		Assert.assertTrue(verificaUrlAtual().equals(login.urlUser));
-		wait.until(ExpectedConditions.visibilityOfElementLocated(login.endBotaoLogin));
+		Assert.assertTrue(verificaUrlAtual().equals(login.getUrlUser()));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(login.getEndBotaoLogin()));
 		login.botaoLoginUser();
-		wait.until(ExpectedConditions.visibilityOfElementLocated(login.endCaixaPassword));
-		Assert.assertTrue(verificaUrlAtual().equals(login.urlPassword));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(login.getEndCaixaPassword()));
+		Assert.assertTrue(verificaUrlAtual().equals(login.getUrlPassword()));
 		login.setCaixaTextoSenha();
-		wait.until(ExpectedConditions.visibilityOfElementLocated(login.endBotaoPassword));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(login.getEndBotaoPassword()));
 		login.botaoLoginPass();
 		
 		registroMudanca.getBotaoReagistroMudanca();
