@@ -11,34 +11,35 @@ public class PageMinhaVisao {
 		private String minhaVisaoURL = "https://mantis.saojudas.base2.com.br/my_view_page.php";
 		private String buscaLink = "https://mantis.saojudas.base2.com.br/view.php?id=4";
 		//====================Caminhos de variaveis========================
-		public By campoBuscaTarefa = By.xpath("/html/body/div[2]/div[2]/div[1]/div/form/span/input");
-		public By botaoAtribuidoAMin = By.xpath("//*[@id=\'assigned\']/div[1]/div[2]/div");
-		public By botaoNaoAtribuido = By.xpath("/html/body/div[2]/div[2]/div[2]/div/div[1]/div[3]/div[1]/h4/a");
-		public By botaoRelatadoPorMin = By.xpath("/html/body/div[2]/div[2]/div[2]/div/div[1]/div[5]/div[1]/h4/a");
-		public By botaoResolvido = By.xpath("/html/body/div[2]/div[2]/div[2]/div/div[1]/div[7]/div[1]/h4/a");
-		public By botaoModificadoRecentemente = By.xpath("/html/body/div[2]/div[2]/div[2]/div/div[1]/div[9]/div[1]/h4/a");
-		public By botaoMonitoradoPorMin = By.xpath("/html/body/div[2]/div[2]/div[2]/div/div[1]/div[11]/div[1]/h4/a");
-		public By botaoPerfilUsuario = By.xpath("/html/body/div[2]/div[2]/div[1]/ul/li/a");
-		public By botaoCriarTarefa = By.xpath("/html/body/div[1]/div/div[2]/ul/li[1]/div/a");
-		public By botaoAtribuidoAMinVerTarefa = By.xpath("/html/body/div[2]/div[2]/div[2]/div/div[1]/div[1]/div[1]/div[2]/div/a");
-		public By botaoNaoAtribuidoVerTarefa = By.xpath("/html/body/div[2]/div[2]/div[2]/div/div[1]/div[3]/div[1]/div[2]/div/a");
-		public By botaoRelatadoPorMinVerTarefa = By.xpath("/html/body/div[2]/div[2]/div[2]/div/div[1]/div[5]/div[1]/div[2]/div/a");
-		public By botaoResolvidoVerTarefa = By.xpath("/html/body/div[2]/div[2]/div[2]/div/div[1]/div[7]/div[1]/div[2]/div/a");
-		public By botaoModificadoRecentementeVerTarefa = By.xpath("/html/body/div[2]/div[2]/div[2]/div/div[1]/div[9]/div[1]/div[2]/div/a");
-		public By botaoMonitoradoPorMinVerTarefa = By.xpath("/html/body/div[2]/div[2]/div[2]/div/div[1]/div[11]/div[1]/div[2]/div/a");
-        public By botaoAnteriorLinhaTempo = By.xpath("/html/body/div[2]/div[2]/div[2]/div/div[2]/div[1]/div[2]/div[1]/div/div/a");
-		public By textoErrorMilCem = By.xpath("//*[@id=\"main-container\"]/div[2]/div[2]/div/div/div[2]/p[1]");
+		private By campoBuscaTarefa = By.xpath("/html/body/div[2]/div[2]/div[1]/div/form/span/input");
+		private By botaoAtribuidoAMin = By.xpath("//*[@id=\'assigned\']/div[1]/div[2]/div");
+		private By botaoNaoAtribuido = By.xpath("/html/body/div[2]/div[2]/div[2]/div/div[1]/div[3]/div[1]/h4/a");
+		private By botaoRelatadoPorMin = By.xpath("/html/body/div[2]/div[2]/div[2]/div/div[1]/div[5]/div[1]/h4/a");
+		private By botaoResolvido = By.xpath("/html/body/div[2]/div[2]/div[2]/div/div[1]/div[7]/div[1]/h4/a");
+		private By botaoModificadoRecentemente = By.xpath("/html/body/div[2]/div[2]/div[2]/div/div[1]/div[9]/div[1]/h4/a");
+		private By botaoMonitoradoPorMin = By.xpath("/html/body/div[2]/div[2]/div[2]/div/div[1]/div[11]/div[1]/h4/a");
+		private By botaoPerfilUsuario = By.xpath("/html/body/div[2]/div[2]/div[1]/ul/li/a");
+		private By botaoCriarTarefa = By.xpath("/html/body/div[1]/div/div[2]/ul/li[1]/div/a");
+		private By botaoAtribuidoAMinVerTarefa = By.xpath("/html/body/div[2]/div[2]/div[2]/div/div[1]/div[1]/div[1]/div[2]/div/a");
+		private By botaoNaoAtribuidoVerTarefa = By.xpath("/html/body/div[2]/div[2]/div[2]/div/div[1]/div[3]/div[1]/div[2]/div/a");
+		private By botaoRelatadoPorMinVerTarefa = By.xpath("/html/body/div[2]/div[2]/div[2]/div/div[1]/div[5]/div[1]/div[2]/div/a");
+		private By botaoResolvidoVerTarefa = By.xpath("/html/body/div[2]/div[2]/div[2]/div/div[1]/div[7]/div[1]/div[2]/div/a");
+		private By botaoModificadoRecentementeVerTarefa = By.xpath("/html/body/div[2]/div[2]/div[2]/div/div[1]/div[9]/div[1]/div[2]/div/a");
+		private By botaoMonitoradoPorMinVerTarefa = By.xpath("/html/body/div[2]/div[2]/div[2]/div/div[1]/div[11]/div[1]/div[2]/div/a");
+        private By botaoAnteriorLinhaTempo = By.xpath("/html/body/div[2]/div[2]/div[2]/div/div[2]/div[1]/div[2]/div[1]/div/div/a");
+		private By textoErrorMilCem = By.xpath("//*[@id=\"main-container\"]/div[2]/div[2]/div/div/div[2]/p[1]");
 		private By textoErroDuzentoTre = By.xpath("/html/body/div[2]/div[2]/div[2]/div/div/div[2]/p[1]");
-        public By botaoAbaLinhaTempo = By.xpath("/html/body/div[2]/div[2]/div[2]/div/div[2]/div[1]/div[1]/div/a");
-		public String urlAtribuidoAMin = "https://mantis.saojudas.base2.com.br/view_all_bug_page.php?filter=";
-		public String urlLinhaTempo = "https://mantis.saojudas.base2.com.br/my_view_page.php?days=7";
-		public String mensagemVisualizandoTarefa = "Visualizando Tarefas";
-		public String mensagemFiltro = "Filtros";
+        private By botaoAbaLinhaTempo = By.xpath("/html/body/div[2]/div[2]/div[2]/div/div[2]/div[1]/div[1]/div/a");
+		private String urlAtribuidoAMin = "https://mantis.saojudas.base2.com.br/view_all_bug_page.php?filter=";
+		private String urlLinhaTempo = "https://mantis.saojudas.base2.com.br/my_view_page.php?days=7";
+		private String mensagemVisualizandoTarefa = "Visualizando Tarefas";
+		private String mensagemFiltro = "Filtros";
 		private String caracter = "busca";
 		private String mensagemErroBuscaVazia = "APPLICATION ERROR #1100";
 		private String mensagemErroBuscaCaracter = "APPLICATION ERROR #203";
 		private String busca = "4";
-		public WebDriver driver;
+		private WebDriver driver;
+		
 		
 		public PageMinhaVisao(WebDriver driver) {
 			this.driver = driver;
@@ -188,6 +189,27 @@ public class PageMinhaVisao {
 		public String getBuscaLink() {
 			return buscaLink;
 		}
+		
+		public String getFiltroMensagem() {return mensagemFiltro;}
+		
+		public String getMensagemVisualizandoATarefa() {return mensagemVisualizandoTarefa;}
+		
+		public String getUrlLinhaDoTempo() {return urlLinhaTempo;}
+		
+		public By getBotaoAnteriorLinhaDoTempo() {return botaoAnteriorLinhaTempo;}
+		
+		public By getBotaoMonitoradoMinVerTarefa() {return botaoMonitoradoPorMinVerTarefa;}
+		
+		public By getBotaoModificadoRecentementeTarefa() {return botaoModificadoRecentementeVerTarefa;}
+		
+		public By getBotaoResolvidoTarefa() {return botaoResolvidoVerTarefa;}
+		
+		public By getBotaoNaoAtribuidoTarefa() {return botaoNaoAtribuidoVerTarefa;}
+		
+		public By getBotaoAtribuidoMin() {return botaoAtribuidoAMin;}
+		
+		public By getBotaoRelatadoMinVerTarefa() {return botaoRelatadoPorMinVerTarefa;}
+
 		
 		public String verificaUrlAtual() throws WebDriverException{
 			

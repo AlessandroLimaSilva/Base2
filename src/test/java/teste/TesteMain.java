@@ -10,7 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import factory.DriverFactory;
 
 public class TesteMain {
-	
+	//**********************************************************************
 	// 01 ||Teste de login efetuado com sucesso
 	@Test
 	public void loginSucesso() throws IOException,WebDriverException,InterruptedException{
@@ -19,11 +19,73 @@ public class TesteMain {
 		WebDriverWait wait = new WebDriverWait(driver,10);
 		TestePageLogin login = new TestePageLogin(driver,wait);
 			
-		login.loginSucesso();
+		login.loginSucesso();///1
 		driver.quit();
 			
 		
 	}
+	
+	//***************************************************************2
+		// 15 || Teste  para acessar função minha conta
+	@Test
+	public void AcessarTelaMinhaConta() throws IOException,WebDriverException,InterruptedException{
+		WebDriver driver = new DriverFactory().getConnectionChrome();
+		WebDriverWait wait = new WebDriverWait(driver,10);
+			
+		TestePageLogin login = new TestePageLogin(driver,wait);
+		TestePageMinhaConta tpgm = new TestePageMinhaConta(driver,wait);
+		login.loginSucesso();
+		tpgm.getAcessarMinhaConta();//2
+			
+		driver.quit();
+			
+	}
+	
+	//**************************************************3
+	// 29 || Erro ao digitar uma letra ou caracter especial no campo de busca.
+	@Test
+	public void erroBuscaCaracterLetra() throws IOException,WebDriverException,InterruptedException{
+		WebDriver driver = new DriverFactory().getConnectionChrome();
+		WebDriverWait wait = new WebDriverWait(driver,10);
+		
+		TestePageLogin login = new TestePageLogin(driver,wait);
+		TestePageMinhaVisao mv = new TestePageMinhaVisao(driver,wait);
+		login.loginSucesso();
+		mv.getErroBuscaCaracter();//****************************3
+		driver.quit();
+
+	}
+
+
+    ///*********************************************4
+	// 25 || Teste para acessar a função adicionar perfil de usuario
+	@Test
+	public void adicionarPerfilUsuario() throws IOException,WebDriverException,InterruptedException{
+		WebDriver driver = new DriverFactory().getConnectionChrome();
+		WebDriverWait wait = new WebDriverWait(driver,10);
+		
+		TestePageLogin login = new TestePageLogin(driver,wait);
+		TestePageMinhaConta tpgm = new TestePageMinhaConta(driver,wait);
+		login.loginSucesso();
+		
+		tpgm.getAdicionarPerfil();
+		driver.quit();
+	}
+	//***********************************************5
+	// 27 ||Erro ao nao selecionar um perfil e apertar o botao enviar
+	@Test
+	public void naoSelecionarPerfilUsuario() throws IOException,WebDriverException,InterruptedException{
+		WebDriver driver = new DriverFactory().getConnectionChrome();
+		WebDriverWait wait = new WebDriverWait(driver,10);
+		
+		TestePageLogin login = new TestePageLogin(driver,wait);
+		TestePageMinhaConta tpgm = new TestePageMinhaConta(driver,wait);
+		login.loginSucesso();
+		
+		tpgm.getNaoSelecionarPerfil();
+		driver.quit();
+	}
+
 	
 	// 02 ||Teste login com senha invalida
 	@Test
@@ -211,20 +273,6 @@ public class TesteMain {
 		driver.quit();
 	}
 	
-	// 15 || Teste  para acessar função minha conta
-	@Test
-	public void AcessarTelaMinhaConta() throws IOException,WebDriverException,InterruptedException{
-		WebDriver driver = new DriverFactory().getConnectionChrome();
-		WebDriverWait wait = new WebDriverWait(driver,10);
-		
-		TestePageLogin login = new TestePageLogin(driver,wait);
-		TestePageMinhaConta tpgm = new TestePageMinhaConta(driver,wait);
-		login.loginSucesso();
-		tpgm.getAcessarMinhaConta();
-		
-		driver.quit();
-		
-	}
 	
 	// 16 || Teste para acessar a função deslogar do sistema
 	@Test
@@ -355,20 +403,6 @@ public class TesteMain {
 		
 		driver.quit();
 	}
-
-	// 25 || Teste para acessar a função adicionar perfil de usuario
-	@Test
-	public void adicionarPerfilUsuario() throws IOException,WebDriverException,InterruptedException{
-		WebDriver driver = new DriverFactory().getConnectionChrome();
-		WebDriverWait wait = new WebDriverWait(driver,10);
-		
-		TestePageLogin login = new TestePageLogin(driver,wait);
-		TestePageMinhaConta tpgm = new TestePageMinhaConta(driver,wait);
-		login.loginSucesso();
-		
-		tpgm.getAdicionarPerfil();
-		driver.quit();
-	}
 	
 	// 26 || Teste para a função selecionar perfil de usuario
 	@Test
@@ -384,19 +418,6 @@ public class TesteMain {
 		driver.quit();
 	}
 
-	// 27 ||Erro ao nao selecionar um perfil e apertar o botao enviar
-	@Test
-	public void naoSelecionarPerfilUsuario() throws IOException,WebDriverException,InterruptedException{
-		WebDriver driver = new DriverFactory().getConnectionChrome();
-		WebDriverWait wait = new WebDriverWait(driver,10);
-		
-		TestePageLogin login = new TestePageLogin(driver,wait);
-		TestePageMinhaConta tpgm = new TestePageMinhaConta(driver,wait);
-		login.loginSucesso();
-		
-		tpgm.getNaoSelecionarPerfil();
-		driver.quit();
-	}
 	
 	// 28 ||Erro ao digitar enter no campo de busca vazio
 	@Test
@@ -409,20 +430,6 @@ public class TesteMain {
 		login.loginSucesso();
 		mv.getErroBuscaVazia();
 		driver.quit();
-	}
-	
-	// 29 || Erro ao digitar uma letra ou caracter especial no campo de busca.
-	@Test
-	public void erroBuscaCaracterLetra() throws IOException,WebDriverException,InterruptedException{
-		WebDriver driver = new DriverFactory().getConnectionChrome();
-		WebDriverWait wait = new WebDriverWait(driver,10);
-		
-		TestePageLogin login = new TestePageLogin(driver,wait);
-		TestePageMinhaVisao mv = new TestePageMinhaVisao(driver,wait);
-		login.loginSucesso();
-		mv.getErroBuscaCaracter();
-		driver.quit();
-
 	}
 	
 	//30 || 
